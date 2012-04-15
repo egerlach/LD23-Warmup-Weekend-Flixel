@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="explosion1_data" version="1.3.0" audacityversion="2.0.0" sel0="0.0000000000" sel1="0.5004081633" vpos="0" h="0.0000000000" zoom="1203.0000000000" rate="44100.0">
+	<tags/>
+	<wavetrack name="Audio Track" channel="2" linked="0" mute="0" solo="0" height="150" minimized="0" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="22068">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000a19.au" len="22068" min="-0.82048" max="0.787931" rms="0.145482"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="4">
+				<controlpoint t="0.004987531172" val="1.500000000000"/>
+				<controlpoint t="0.098088113051" val="1.500000000000"/>
+				<controlpoint t="0.230257689111" val="1.027777791023"/>
+				<controlpoint t="0.497921862012" val="0.180555552244"/>
+			</envelope>
+		</waveclip>
+	</wavetrack>
+</project>
