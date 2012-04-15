@@ -4,6 +4,7 @@ package
 	import org.flixel.*;
 	import sprites.Alien;
 	import sprites.Bullet;
+	import sprites.Debris;
 	import sprites.Ship;
 
 	public class PlayState extends FlxState
@@ -95,6 +96,7 @@ package
 			FlxG.play(alienExplodeSound);
 			FlxG.score += 1;
 			scoreText.text = FlxG.score.toString();
+			createExplosion().at(a);
 		}
 		private function overlapAliensShip(a:Alien, s:Ship):void
 		{
@@ -107,6 +109,27 @@ package
 			gameOverText.setFormat(null, 16, 0xff597137, "center");
 			
 			add(gameOverText);
+		}
+		
+		private function createExplosion():FlxEmitter
+		{
+			var emitter:FlxEmitter = new FlxEmitter();
+			emitter.gravity = 0;
+			emitter.setRotation(0, 0);
+			emitter.setXSpeed( -500, 500);
+			emitter.setYSpeed( -500, 500);
+			for (var i:int = 0; i < 10; i++)
+			{
+				var particle:FlxParticle = new FlxParticle();
+				particle.makeGraphic(2, 2, 0xFF597137);
+				particle.exists = false;
+				emitter.add(particle);
+			}
+			
+			
+			emitter.start(true, 1);
+			add(emitter);
+			return emitter;
 		}
 	}
 }
